@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model users {
+  id             Int           @id @default(autoincrement())
+  name           String
+  email          String        @unique
+  password       String
+  profession     String?
+  introduction   String?
+  date_created   DateTime      @default(now())
+  date_updated   DateTime      @updatedAt
+  role           String        @default("user")
+  status         Int           @default(1)
+  social_links   Json?
+  address        String
+  phone          String
+  availability   String
+  preferred_role String
+  experiences    experiences[]
+  projects       projects[]
+  skills         skills[]
+}
+
+model experiences {
+  id           Int       @id @default(autoincrement())
+  company      String
+  role         String
+  period       String
+  location     String
+  startDate    DateTime
+  endDate      DateTime?
+  desc         String?
+  tags         Json?
+  date_created DateTime  @default(now())
+  date_updated DateTime  @updatedAt
+  status       Int       @default(1)
+  user_id      Int
+  user         users     @relation(fields: [user_id], references: [id])
+}
+
+model projects {
+  id           Int      @id @default(autoincrement())
+  title        String
+  desc         String?
+  year         DateTime
+  image        String?
+  date_created DateTime @default(now())
+  date_updated DateTime @updatedAt
+  status       Int      @default(1)
+  user_id      Int
+  user         users    @relation(fields: [user_id], references: [id])
+}
+
+model skills {
+  id           Int      @id @default(autoincrement())
+  category     String
+  items        Json?
+  date_created DateTime @default(now())
+  date_updated DateTime @updatedAt
+  status       Int      @default(1)
+  user_id      Int
+  user         users    @relation(fields: [user_id], references: [id])
+}

@@ -37,7 +37,9 @@ const EXPERIENCE = [
 ];
 
 const SKILLS = [
-  { category: "Design", items: ["Product design", "Interaction design", "Design systems", "Visual identity", "Motion & micro-animation", "User research"] },
+  { 
+    category: "Design", 
+    items: ["Product design", "Interaction design", "Design systems", "Visual identity", "Motion & micro-animation", "User research"] },
   { category: "Tools", items: ["Figma", "Framer", "Principle", "After Effects", "Rive", "Storybook"] },
   { category: "Code", items: ["HTML / CSS", "React", "TypeScript", "Tailwind CSS", "Git", "Storybook"] },
 ];
