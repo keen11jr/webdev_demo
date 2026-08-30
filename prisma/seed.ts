@@ -1,16 +1,3 @@
-// import { PrismaClient } from "@/generated/prisma/client";
-// import { PrismaMariaDb } from "@prisma/adapter-mariadb";
-// import "dotenv/config";
-// const adapter = new PrismaMariaDb({
-//   host: process.env.DATABASE_HOST,
-//   user: process.env.DATABASE_USER,
-//   password: process.env.DATABASE_PASSWORD,
-//   database: process.env.DATABASE_NAME,
-//   connectionLimit: 5,
-// });
-
-// const prisma = new PrismaClient({ adapter });
-
 import { prisma } from "@/lib/prisma";
 
 async function main() {
@@ -39,8 +26,8 @@ async function main() {
             role: "Senior Software Engineer",
             period: "Jan 2020 - Present",
             location: "GMA, Cavite, Philippines",
-            startDate: new Date("2020-01-01"),
-            endDate: new Date("2023-12-31"),
+            start_date: new Date("2020-01-01"),
+            end_date: new Date("2023-12-31"),
             desc: "Led a team of developers in building scalable web applications and implementing best practices for software development.",
           },
         ],

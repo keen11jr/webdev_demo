@@ -39,8 +39,8 @@ model experiences {
   role         String
   period       String
   location     String
-  startDate    DateTime
-  endDate      DateTime?
+  start_date    DateTime
+  end_date      DateTime?
   desc         String?
   tags         Json?
   date_created DateTime  @default(now())
