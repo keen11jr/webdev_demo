@@ -1,6 +1,6 @@
-import { NAV_LINKS } from "@/app/page";
-
+"use client";
 export default function Mynav() {
+    const NAV_LINKS = ["Work", "Skills", "Projects", "Contact"];
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 md:px-16" style={{ background: "linear-gradient(to bottom, #0c0c0b 60%, transparent)" }}>
         <a href="#" className="font-serif text-base tracking-tight" style={{ fontFamily: "var(--font-serif)" }}>
